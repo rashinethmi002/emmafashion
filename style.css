@@ -1067,6 +1067,13 @@ input[type="number"] {
   nav ul li {
     margin: 8px 0;
   }
+
+    .hero img {
+    width: 100%;
+    height: 100vh;   /* make it fill screen */
+    object-fit: cover; /* no extra space, crops nicely */
+    display: block;
+  }
 .row {
         height: 100vh;           /* always fill phone screen */
         flex-direction: column;  /* stack items if needed */
@@ -1244,6 +1251,7 @@ input[type="number"] {
     grid-template-columns: 1fr;
   }
 }
+
 
 
 
