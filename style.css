@@ -1067,10 +1067,43 @@ input[type="number"] {
   nav ul li {
     margin: 8px 0;
   }
+.row {
+        height: 100vh;           /* always fill phone screen */
+        flex-direction: column;  /* stack items if needed */
+    }
 
-  /* Mobile Fixes */
-@media (max-width: 768px) {
-  /* Hero Section */
+    .row img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;       /* crop image properly */
+        object-position: center;
+    }
+
+    .col-2 {
+        position: absolute;      
+        top: 50%;                /* center on phone */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        padding: 10px;
+        background: rgba(0,0,0,0.4); /* optional overlay for readability */
+        border-radius: 8px;
+        width: 80%;              /* fit nicely on phone */
+    }
+
+    .col-2 h1 {
+        font-size: 1.5rem;       /* smaller text on phone */
+    }
+
+    .col-2 p {
+        font-size: 1rem;
+    }
+
+    .col-2 .btn {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+    }
   .col-2 {
     position: relative;
     text-align: center;
@@ -1211,5 +1244,6 @@ input[type="number"] {
     grid-template-columns: 1fr;
   }
 }
+
 
 
