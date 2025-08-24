@@ -1052,202 +1052,122 @@ input[type="number"] {
     background: #000;
 }
 
-/* 📱 Mobile & Tablet Responsive Fixes */
+/* 📱 Tablet (up to 1024px) */
 @media (max-width: 1024px) {
   .col-4, .col-5 {
     width: 45%;
   }
 }
 
+/* 📱 Mobile (up to 768px) */
 @media (max-width: 768px) {
-  nav ul {
+  /* Navbar */
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
-  nav ul li {
-    margin: 8px 0;
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .navbar a {
+    font-size: 16px;
   }
 
-  
-.row {
-        height: 100vh;           /* always fill phone screen */
-        flex-direction: column;  /* stack items if needed */
-    }
-
-    .row img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;       /* crop image properly */
-        object-position: center;
-    }
-
-    .col-2 {
-        position: absolute;      
-        top: 50%;                /* center on phone */
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: white;
-        padding: 10px;
-        background: rgba(0,0,0,0.4); /* optional overlay for readability */
-        border-radius: 8px;
-        width: 80%;              /* fit nicely on phone */
-    }
-
-    .col-2 h1 {
-        font-size: 1.5rem;       /* smaller text on phone */
-    }
-
-    .col-2 p {
-        font-size: 1rem;
-    }
-
-    .col-2 .btn {
-        font-size: 0.9rem;
-        padding: 8px 14px;
-    }
+  /* Hero Section (image + text) */
+  .row {
+    flex-direction: column;
+    height: 100vh;             /* always fill phone screen */
+  }
+  .row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
   .col-2 {
-    position: relative;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    padding: 40px 20px;
+    padding: 20px;
+    width: 80%;
+    z-index: 2;
   }
-
   .col-2::before {
     content: "";
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* overlay */
-    z-index: 1;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
   }
-
-  .col-2 h1, 
-  .col-2 p, 
-  .col-2 .btn {
-    position: relative;
-    z-index: 2;
-  }
-
   .col-2 h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.4;
+  }
+  .col-2 p {
+    font-size: 1rem;
+  }
+  .col-2 .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  /* Product grid */
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* About section */
+  .about .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  /* Contact */
+  .contact-sections {
+    flex-direction: column;
+    text-align: center;
+  }
+  .section {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  /* Account page */
+  .account-page .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .account-page .form-cont {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: 0; left: 0;
+  }
+}
+
+/* 📱 Small phones (up to 480px) */
+@media (max-width: 480px) {
+  .col-2 h1 {
+    font-size: 1.2rem;
   }
   .col-2 p {
     font-size: 0.9rem;
   }
   .col-2 .btn {
-    font-size: 0.9rem;
-    padding: 8px 20px;
-  }
-
-  /* Products */
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  /* Navbar vertical */
-   .navbar {
-        flex-direction: column; /* stack logo and menu */
-        align-items: flex-start; /* align to left */
-    }
-
-    .navbar ul {
-        flex-direction: column; /* stack links vertically */
-        gap: 10px;
-        width: 100%;
-    }
-
-    .navbar a {
-        font-size: 16px; /* adjust font size for mobile */
-    }
-  /* General sections */
-  .about .content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about img {
-    margin-bottom: 15px;
-    width: 100%;
-    height: auto;
-  }
-
-  .contact-sections {
-    flex-direction: column;
-    text-align: center;
-  }
-  .section {
-    width: 100%;
-    margin: 15px 0;
-  }
-}
-
-  .row {
-    flex-direction: column;
-    height: auto;
-    align-items: center;
-  }
-
-  .col-4, .col-5 {
-    width: 100%;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .about .content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about img {
-    margin-bottom: 15px;
-    width: 100%;
-    height: auto;
-  }
-
-  .contact-sections {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .section {
-    width: 100%;
-    margin: 15px 0;
-  }
-
-  .account-page .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .account-page .form-cont {
-    position: relative;
-    width: 100%;
-    max-width: 90%;
-    margin: auto;
-    left: 0;
-    top: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .col-2 h1 {
-    font-size: 1.2rem;
-    line-height: 1.4;
-  }
-  .btn {
-    padding: 6px 20px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    padding: 6px 14px;
   }
   .product-grid {
     grid-template-columns: 1fr;
   }
 }
-
-
-
-
-
