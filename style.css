@@ -1054,95 +1054,88 @@ input[type="number"] {
 
 /* 📱 Mobile & Tablet Responsive Fixes */
 @media (max-width: 1024px) {
-  .col-4 {
-    width: 45%; /* 2 products per row on tablets */
-  }
-  .col-5 {
+  .col-4, .col-5 {
     width: 45%;
   }
 }
 
 @media (max-width: 768px) {
-  nav ul li {
-    display: block;
-    margin: 10px 0;
-    text-align: left;
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  nav {
-    text-align: left;
+  nav ul li {
+    margin: 8px 0;
   }
 
   .col-2 {
-    position: static;   /* remove absolute positioning */
-    min-width: unset;
+    position: relative;
+    min-width: 100%;
     text-align: center;
-    font-size: medium;
+    font-size: 1rem;
     padding: 20px;
   }
 
   .row {
+    flex-direction: column;
     height: auto;
+    align-items: center;
   }
 
-  .col-4 {
-    width: 100%; /* 1 product per row */
-  }
-
-  .col-5 {
+  .col-4, .col-5 {
     width: 100%;
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row instead of 6 */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .about .content {
     flex-direction: column;
     text-align: center;
   }
-
   .about img {
-    margin: 0 0 20px 0;
-    max-width: 100%;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
   }
 
   .contact-sections {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   .section {
+    width: 100%;
     margin: 15px 0;
   }
 
   .account-page .container {
     flex-direction: column;
-    align-items: center;
     padding: 10px;
   }
 
   .account-page .form-cont {
-    position: static;
+    position: relative;
     width: 100%;
-    max-width: 100%;
-    left: auto;
-    top: auto;
+    max-width: 90%;
+    margin: auto;
+    left: 0;
+    top: 0;
   }
 }
 
 @media (max-width: 480px) {
   .col-2 h1 {
-    font-size: 120%;
-    line-height: 25px;
+    font-size: 1.2rem;
+    line-height: 1.4;
   }
-
   .btn {
     padding: 6px 20px;
-    font-size: small;
+    font-size: 0.9rem;
   }
-
   .product-grid {
-    grid-template-columns: 1fr; /* 1 per row on small phones */
+    grid-template-columns: 1fr;
   }
 }
