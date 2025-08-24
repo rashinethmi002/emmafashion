@@ -1113,14 +1113,20 @@ input[type="number"] {
   }
 
   /* Navbar vertical */
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav ul li {
-    margin: 8px 0;
-  }
+   .navbar {
+        flex-direction: column; /* stack logo and menu */
+        align-items: flex-start; /* align to left */
+    }
 
+    .navbar ul {
+        flex-direction: column; /* stack links vertically */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar a {
+        font-size: 16px; /* adjust font size for mobile */
+    }
   /* General sections */
   .about .content {
     flex-direction: column;
@@ -1205,4 +1211,5 @@ input[type="number"] {
     grid-template-columns: 1fr;
   }
 }
+
 
